@@ -1,0 +1,12 @@
+@import "src/styles/variable";
+
+.btnDelete {
+  background: $grey30;
+  border: 1px solid $grey30 !important;
+  color: $grey70;
+
+  &:hover {
+    background: $grey70 !important;
+    border: 1px solid $grey30 !important;
+  }
+}

@@ -1,0 +1,142 @@
+@import 'variable';
+
+@import 'mixins';
+
+.container {
+    padding: 10px 8px;
+    margin: 0 50px;
+
+    min-height: var(--layout-user-max-height);
+    max-height: var(--layout-user-max-height);
+    height: var(--layout-user-max-height);
+    overflow-y: auto;
+}
+
+.containerContentTab {
+    width: 100%;
+    height: 100%;
+
+    .btnAddLocations {
+        border-color: var(--primary-color);
+        background-color: var(--primary-color);
+        color: white;
+    }
+}
+
+.title-page-btn {
+    height: 100%;
+    width: 300px;
+
+    &__icon {
+        display: flex;
+        // align-items: flex-start;
+    }
+
+    @include responsive_1024 {
+        width: 100%;
+    }
+    @include responsive_992 {
+        width: 100%;
+    }
+    @include responsive_768 {
+        width: 100%;
+    }
+    @include responsive_425 {
+        width: 100%;
+    }
+    @include responsive_375 {
+        width: 100%;
+    }
+    @include responsive_320 {
+        width: 100%;
+    }
+}
+
+.table {
+    :global {
+        .ant-table-content {
+            & > table {
+                width: 100%;
+                border: 3px solid white;
+
+                & > thead > tr,
+                & > thead > tr > th,
+                & > tbody > tr,
+                & > tbody > tr > td {
+                    border: 3px solid white !important;
+                }
+            }
+        }
+
+        .ant-table-cell-row-hover {
+            color: white;
+            background: $gradient2 !important;
+        }
+
+        .ant-table-thead > tr > th {
+            background-color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: $primary-color !important;
+            padding: 0 5px;
+
+            &:hover {
+                background: white !important;
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .ant-table-tbody > tr > td {
+            padding: 12px 16px;
+            font-size: 0.8rem;
+        }
+
+        .ant-table-row {
+            cursor: pointer;
+        }
+
+        tbody tr:nth-child(odd) {
+            background: $grey10;
+        }
+
+        tbody tr:nth-child(even) {
+            background: $grey5;
+        }
+
+        .ant-table-wrapper .ant-table-thead th.ant-table-column-has-sorters {
+            &:hover {
+                background: white !important;
+            }
+        }
+
+        .ant-table-wrapper .ant-table-thead .ant-table-column-has-sorters {
+            &:hover {
+                background-color: white !important;
+            }
+        }
+    }
+}
+
+.iconSort {
+    margin-left: 8px;
+    color: $grey85 !important;
+    cursor: pointer;
+
+    &:hover {
+        color: $primary-color !important;
+    }
+}
+
+.btnAddIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: '8px';
+}
+.flexRow {
+    display: flex;
+    flex-wrap: nowrap;
+}

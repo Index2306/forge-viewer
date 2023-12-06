@@ -1,0 +1,1 @@
+export type BrowserType = 'Firefox' | 'Chrome' | 'Safari' | 'Microsoft Edge' | 'Unknown';

@@ -1,0 +1,86 @@
+@import "src/styles/variable";
+
+.container {
+  position: relative;
+  height: 200px;
+}
+
+.btnBack {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #FFFFFF;
+  border-radius: 15px;
+  top: -15px;
+  left: -15px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.tabCard {
+  :global {
+    .ant-tabs-tab {
+      margin-right: -15px !important;
+      background: #FFFFFF !important;
+      border: 2px solid $grey30 !important;
+      border-bottom: none !important;
+      padding: 8px 30px !important;
+      font-weight: 700;
+      color: $grey70;
+
+      &::after {
+        content: " ";
+        display: block;
+        background: $grey30;
+        height: 1px;
+        width: 100%;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+      }
+    }
+
+    .ant-tabs-tab-active {
+      z-index: 999 !important;
+      position: relative;
+
+      &::after {
+        content: " ";
+        display: block;
+        background: white;
+        height: 2px;
+        width: 100%;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+      }
+    }
+
+    .ant-tabs-nav-wrap {
+      // border-bottom: 2px solid $grey30;
+      z-index: 1;
+    }
+
+    .ant-tabs-nav {
+      margin: 0;
+      margin-bottom: -1px !important;
+    }
+
+    @for $i from 1 through 999 {
+      .ant-tabs-tab:nth-child(#{$i}) {
+        z-index: 998 - $i;
+      }
+    }
+  }
+}
+
+.contentTab {
+  border: 2px solid $grey30;
+  min-height: 200px;
+  z-index: 1;
+  padding: 20px 30px;
+}

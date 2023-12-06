@@ -1,0 +1,16 @@
+.icon-action {
+    cursor: pointer;
+
+    // Because it use nextjs Image, so we can change the color of icon with filter
+    filter: var(--filter-icons-2);
+
+    &--hover {
+        &:hover {
+            filter: var(--filter-icons--primary-color);
+        }
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

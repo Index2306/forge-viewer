@@ -1,0 +1,129 @@
+// --------------------------------------------------- Primary button
+
+.button {
+    // Set background color based on Pdf design
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: var(--border-radius-small);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // Text
+    text-transform: uppercase;
+    font-weight: 700;
+
+    border: unset;
+
+    &:hover {
+        opacity: 0.9;
+        background-color: var(--primary-color) !important;
+        color: #fff !important;
+        border-color: inherit !important;
+    }
+
+    &.large-width {
+        min-width: 180px;
+    }
+}
+
+// --------------------------------------------------- Secondary button
+
+.button-secondary {
+    @extend .button;
+    background-color: var(--secondary-color);
+
+    &:hover {
+        opacity: 0.9;
+        background-color: var(--secondary-color) !important;
+        color: #fff !important;
+        border-color: inherit !important;
+    }
+}
+
+// --------------------------------------------------- Modifiers
+
+.small {
+    height: 30px;
+}
+
+.middle {
+    height: 40px;
+}
+
+.large {
+    height: 55px;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.noFullWidth {
+    width: auto;
+}
+
+.fullHeight {
+    height: 100%;
+}
+
+.flat {
+    border-radius: 0;
+}
+
+.disabled {
+    cursor: not-allowed;
+    border-color: var(--grey-400);
+    color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.04);
+    box-shadow: none;
+
+    // Text
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &:hover {
+        border-color: inherit !important;
+        color: rgba(0, 0, 0, 0.25);
+        background-color: rgba(0, 0, 0, 0.04);
+        box-shadow: none;
+    }
+
+    &.large-width {
+        min-width: 180px;
+    }
+}
+
+.ghost {
+    background-color: #fff;
+    color: var(--grey-800);
+    border: 1px solid var(--grey-500);
+
+    &:hover {
+        opacity: 0.9;
+        background-color: #fff !important;
+        color: var(--primary-color) !important;
+        border-color: var(--grey-500) !important;
+    }
+
+    &.large-width {
+        min-width: 180px;
+    }
+}
+
+.warning {
+    background-color: var(--warning-color);
+    color: #fff;
+    border: unset;
+
+    &:hover {
+        opacity: 0.9;
+        background-color: var(--warning-color) !important;
+        color: #fff !important;
+        border-color: inherit !important;
+    }
+
+    &.large-width {
+        min-width: 180px;
+    }
+}

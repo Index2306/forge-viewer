@@ -1,0 +1,34 @@
+.page-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    &__page-icon-wrapper {
+        margin: 0 auto;
+    }
+
+    &__title-wrapper {
+        color: rgba(40, 33, 33, 0.88);
+        font-size: 80px;
+        line-height: var(--line-height-normal);
+        margin: 8px auto;
+        font-weight: var(--f-weight-bold);
+    }
+
+    &__sub-title-wrapper {
+        color: rgba(0, 0, 0, 0.88);
+        font-size: var(--f-size-16);
+        margin: 8px auto;
+        font-weight: var(--f-weight-regular);
+    }
+
+    &__btn-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 20px;
+    }
+}

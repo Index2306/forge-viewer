@@ -1,0 +1,22 @@
+.setting-dropdown {
+    &__icon {
+        // filter: var(--filter-icons-white-color);
+        color: #fff;
+        font-size: var(--icon-size-small);
+        cursor: pointer;
+    }
+
+    &__menu-item {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+
+    &__menu-item__icon {
+       // implement here...
+    }
+
+    &__menu-item__text {
+        margin-left: 8px;
+    }
+}

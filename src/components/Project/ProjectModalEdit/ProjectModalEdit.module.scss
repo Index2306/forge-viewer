@@ -1,0 +1,36 @@
+@import 'src/styles/variable';
+
+.divider {
+    margin-top: 0;
+}
+
+.formProject {
+    margin-bottom: 12px;
+}
+
+.project-modal-edit {
+    &__content {
+        margin-top: 5px;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 12px;
+    }
+}
+
+.contentTab {
+    width: 100%;
+    border: 1px solid $grey30;
+    min-height: 200px;
+    z-index: 1;
+    padding: 20px 30px;
+}
+
+.contentTabCreate {
+    border: 1px solid $grey30;
+    min-height: 200px;
+    z-index: 1;
+    padding: 20px 30px;
+}

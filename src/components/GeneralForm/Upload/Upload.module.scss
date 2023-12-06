@@ -1,0 +1,91 @@
+@import 'src/styles/variable';
+
+.logoUpload {
+    padding-top: 12px;
+    width: 100% !important;
+    // height: 100% !important;
+    // max-height: 300px;
+
+    :global {
+        .ant-upload-list-item-image {
+            object-fit: contain !important;
+        }
+
+        .ant-upload.ant-upload-select > span.ant-upload {
+            background-color: hsla(5.6, 80.2%, 60.4%, 0.1);
+            border: 2px dashed var(--primary-color);
+            border-radius: 0;
+            color: var(--primary-color);
+        }
+
+        .ant-upload.ant-upload-select,
+        .ant-upload-list-item-container {
+            width: 250px !important;
+            height: 125px !important;
+            margin-inline-end: 0;
+            margin-bottom: 0;
+
+            &:hover {
+                border-color: var(--primary-color) !important;
+                & > span > div {
+                    // color: $primary-color !important;
+                    // transition: all 0.2s ease-out;;
+                }
+            }
+        }
+
+        .ant-upload-list.ant-upload-list-picture-card {
+            width: 100% !important;
+            font-size: 1.25rem;
+            // height: 95% !important;
+        }
+    }
+}
+
+.mapUpload {
+    // padding-top: 12px;
+    width: 100% !important;
+    // height: 100% !important;
+    // max-height: 300px;
+
+    :global {
+        .ant-upload-list-item-image {
+            object-fit: contain !important;
+        }
+
+        .ant-upload.ant-upload-select > span.ant-upload {
+            background-color: hsla(5.6, 80.2%, 60.4%, 0.1);
+            border: 2px dashed var(--primary-color);
+            border-radius: 0;
+            color: var(--primary-color);
+        }
+
+        .ant-upload.ant-upload-select,
+        .ant-upload-list-item-container {
+            width: 250px !important;
+            height: 200px !important;
+            margin-inline-end: 0;
+            margin-bottom: 0;
+
+            &:hover {
+                border-color: var(--primary-color) !important;
+                & > span > div {
+                    // color: $primary-color !important;
+                    // transition: all 0.2s ease-out;;
+                }
+            }
+        }
+
+        .ant-upload-list.ant-upload-list-picture-card {
+            width: 100% !important;
+            font-size: 1.25rem;
+            // height: 95% !important;
+        }
+    }
+}
+
+.recommended {
+    font-size: 0.8rem;
+    color: $primary-color;
+    // padding-left: 40px;
+}

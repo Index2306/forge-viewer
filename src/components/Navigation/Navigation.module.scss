@@ -1,0 +1,64 @@
+// ---------------------------------------------------------- NAVIGATION
+
+.navigation-wrapper {
+    width: 100%;
+    height: var(--navigation-max-height);
+    position: relative;
+    background-color: var(--secondary-color);
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+// ---------------------------------------------------------- NAVIGATION MAIN
+
+.navigation-main {
+    // padding: 12px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        flex-shrink: 0;
+        margin-left: 5px;
+    }
+
+    &__menu-icon-list {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+    }
+
+    &__menu-icon-item {
+        width: var(--navigation-action-icon-size);
+        height: var(--navigation-action-icon-size);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.account-nav-item {
+            // background-color: color.scale($secondary-color, $lightness: 15%);
+        }
+
+        &.setting-nav-item {
+            background-color: var(--secondary-color-15);
+        }
+    }
+}
+
+// ---------------------------------------------------------- NAVIGATION LOGOUT
+
+.navigation-logout {
+    width: var(--navigation-action-icon-size);
+    padding: 12px 0;
+
+    background-color: var(--primary-color);
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+}

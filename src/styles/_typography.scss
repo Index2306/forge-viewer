@@ -1,0 +1,113 @@
+@use 'mixins';
+
+// ---------------------------------------------------------------------
+
+$ff-regular: TTInterfaces-Regular;
+$ff-medium: TTInterfaces-Medium;
+$ff-semibold: TTInterfaces-Semibold;
+$ff-light-italic: TTInterfaces-LightItalic;
+$ff-light: TTInterfaces-Light;
+$ff-fallback: system-ui, -apple-system, BlinkMacSystemFont, Ubuntu, sans-serif;
+
+$fonts: $ff-regular, $ff-medium, $ff-semibold, $ff-light-italic, $ff-light, $ff-fallback;
+
+// ---------------------------------------------------------------------
+
+body {
+  font-family: $fonts;
+}
+
+// ---------------------------------------------------------------------
+// [data-class] selector
+// ---------------------------------------------------------------------
+
+// ----------------------------------- Label - Global
+
+// TOOLTIP
+[data-class="label__tooltip"] {
+  font-size: var(--f-size-14);
+  font-weight: var(--f-weight-regular);
+}
+
+// TITLE-PAGE
+[data-class="label__title-page__title-name"] {
+  font-size: var(--f-size-20);
+}
+
+// PROJECT-CARD
+[data-class="label__project-card__project-name"] {
+  font-size: var(--f-size-14);
+}
+
+[data-class="label__project-card__dropdown-option"] {
+  font-size: var(--f-size-14);
+}
+
+// MODAL-APP
+[data-class="label__modal-app__header"] {
+  font-size: var(--f-size-20);
+}
+
+[data-class="label__modal-app__content"] {
+  font-size: var(--f-size-14);
+}
+
+// PROJECT-MODAL-EDIT
+[data-class="label__project-modal-edit__tabname"] {
+  font-size: var(--f-size-14);
+}
+
+// PROJECT-CONFIGURATION-LIST
+[data-class="label__project-configuration-list__title"] {
+  font-size: var(--f-size-16);
+  font-weight: var(--f-weight-bold);
+}
+
+// APP-TAB
+[data-class="label__app-tab__item"] {
+  font-size: var(--f-size-14);
+  font-weight: var(--f-weight-bold);
+}
+
+// ----------------------------------- Label - Page: Tool
+
+// SUB-TOOL
+[data-class="label__page-tool__subtool"] {
+  font-size: var(--f-size-14);
+  font-weight: var(--f-weight-semibold);
+}
+
+// TOOL-LEFT-SIDEBAR
+[data-class="label__page-tool__tool-left-sidebar__main-btn"] {
+  font-size: var(--f-size-16);
+  font-weight: var(--f-weight-semibold);
+}
+
+[data-class="label__page-tool__tool-left-sidebar__house-file-item"] {
+  font-size: var(--f-size-12);
+  font-weight: var(--f-weight-semibold);
+}
+
+// TOOL-RIGHT-SIDEBAR
+[data-class="label__page-tool__tool-right-sidebar__subtool_list-item"] {
+  font-size: var(--f-size-14);
+  font-weight: var(--f-weight-medium);
+}
+
+// MODAL-TUTORIAL
+[data-class="label__page-tool__modal-tutorial__description"] {
+  font-size: var(--f-size-14);
+}
+
+[data-class="label__page-tool__modal-tutorial__hint"] {
+  font-family: $ff-light-italic;
+  font-size: var(--f-size-12);
+  font-weight: var(--f-weight-medium);
+}
+
+// POPUP-WIRING-DISTANCE
+[data-class="label__page-tool__popup-wiring-distance"] {
+  font-size: var(--f-size-14);
+  font-weight: var(--f-weight-semibold);
+}
+

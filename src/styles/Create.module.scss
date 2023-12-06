@@ -1,0 +1,56 @@
+@import "variable";
+@import "mixins";
+
+.container {
+  padding: 0 60px 100px 60px;
+  min-height: var(--layout-user-max-height);
+  max-height: var(--layout-user-max-height);
+  height: var(--layout-user-max-height);
+  overflow: auto;
+}
+
+.contentTab {
+  width: 90%;
+  border: 1px solid var(--grey-400);
+  min-height: 200px;
+  z-index: 1;
+  padding: 20px 30px;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.contentTabCreate {
+  max-width: 55%;
+  border: 1px solid $grey30;
+  min-height: 200px;
+  z-index: 1;
+  padding: 20px 30px;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  @include responsive_425 {
+    max-width: 100%;
+  }
+  @include responsive_768 {
+    max-width: 100%;
+  }
+  @include responsive_992 {
+    max-width: 100%;
+  }
+  @include responsive_1024 {
+    max-width: 70%;
+  }
+
+  @include responsive_1200 {
+    max-width: 70%;
+  }
+  @include responsive_1440 {
+    max-width: 60%;
+  }
+}

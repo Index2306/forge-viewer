@@ -1,0 +1,21 @@
+.floor-tool {
+    &__action {
+        width: 100%;
+        padding: 12px;
+    }
+
+    &__action-icon {
+        width: 100%;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        
+        color: var(--secondary-color-15);
+
+        &.is-active {
+            color: var(--primary-color);
+        }
+    }
+}

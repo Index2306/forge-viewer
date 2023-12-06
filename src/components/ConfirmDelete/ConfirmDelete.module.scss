@@ -1,0 +1,35 @@
+@import "src/styles/variable";
+
+.title {
+  margin-bottom: 12px;
+}
+
+.btnGroup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btn {
+  display: inline-block;
+  width: 55px;
+  background-color: $primary-color !important;
+  text-transform: uppercase;
+  margin-right: 8px;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.btnNo {
+  display: inline-block;
+  width: 55px;
+  background-color: $grey70 !important;
+  text-transform: uppercase;
+  margin-right: 5px;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 270.97 273.3" style="enable-background:new 0 0 270.97 273.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#1D1D1B;}
+	.st1{fill:#E30613;}
+	.st2{fill:none;stroke:#000000;stroke-width:7;stroke-miterlimit:10;}
+</style>
+<symbol  id="Pil_18" viewBox="-18.47 -40.9 36.94 81.79">
+	<path class="st0" d="M-8.96-40.9c-3.03,5.73-5.55,19.87-0.33,26.98C0.91,0-8.32,12.19-9.54,13.82h-8.93L-0.76,40.9l19.23-26.91
+		l-9.52-0.17c0.93-1.95,7.93-15.74-1.16-28.54c-6.12-8.61-3.09-20.84,0.6-26.16L-8.96-40.9z"/>
+</symbol>
+<g>
+	<path class="st1" d="M253.18,15.07c-78.92,0-157.86,0-236.78,0c-3.23,0-3.23,0.01-3.23,3.26c0,78.94,0,157.88,0,236.82
+		c0,3.2,0.01,3.2,3.3,3.2c78.84,0,157.7,0,236.55,0c3.2,0,3.2,0,3.2-3.27c0-39.44,0-78.86,0-118.3c0-39.52,0-79.02,0-118.52
+		C256.22,15.07,256.22,15.07,253.18,15.07z M237.22,239.23H32.18V34.19h205.04V239.23z"/>
+</g>
+<use xlink:href="#Pil_18"  width="36.94" height="81.79" x="-18.47" y="-40.9" transform="matrix(0.9166 -1.2124 1.2124 0.9166 127.6418 166.7764)" style="overflow:visible;"/>
+<use xlink:href="#Pil_18"  width="36.94" height="81.79" x="-18.47" y="-40.9" transform="matrix(0.9166 -1.2124 1.2124 0.9166 145.6786 110.4115)" style="overflow:visible;"/>
+<g>
+	<rect x="40.87" y="42.7" class="st2" width="188.39" height="188.39"/>
+	<line class="st2" x1="40.13" y1="170.27" x2="100.21" y2="230.35"/>
+	<line class="st2" x1="168.07" y1="42.33" x2="228.15" y2="102.41"/>
+</g>
+</svg>

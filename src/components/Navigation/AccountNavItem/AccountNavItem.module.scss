@@ -1,0 +1,37 @@
+.nav-action-icon {}
+
+.user-profile-info-wrapper {
+  &__Item {
+    label {
+      color: #000;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+}
+
+.user-profile-password-wrapper {
+
+  &__lineCt {
+    width: 100%;
+    border-bottom: 1px solid var(--primary-color);
+    margin: 6px 0;
+
+  }
+}
+
+.user-profile-password-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  :global {
+    .ant-typography {
+      margin-left: 10px;
+      margin-bottom: 0;
+      color: #000;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+}

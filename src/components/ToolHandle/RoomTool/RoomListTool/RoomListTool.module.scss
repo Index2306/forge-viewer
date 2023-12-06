@@ -1,0 +1,85 @@
+@import 'src/styles/variable';
+
+.flex--justify-center {
+    display: flex;
+    align-items: center;
+}
+
+.room-card-item__all {
+    margin: 0 -15px 0 -15px;
+    padding: 15px;
+
+    background-color: var(--subtool-show-all-color);
+    color: var(--secondary-color);
+}
+
+.room-card-item {
+    margin: 0px -15px 0 -15px;
+    padding: 8px 15px 8px 15px;
+    border-bottom: 1px solid var(--accent-color-2);
+
+    &:hover {
+        background-color: var(--accent-color-2);
+    }
+
+    &__checkbox {
+        width: 100%;
+    }
+
+    &__label {
+        display: block;
+        max-width: 140px;
+        hyphens: auto;
+        color: var(--secondary-color);
+    }
+
+    &__action-wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 5px;
+    }
+
+    &__action-btn {
+        cursor: pointer;
+        &:hover {
+            color: var(--primary-color);
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.modalTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .btnTitle {
+        text-transform: uppercase;
+    }
+}
+
+.footerForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.deleteBtn {
+    margin-left: 3px;
+    cursor: pointer;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+.settingBtn {
+    margin-left: 3px;
+    cursor: pointer;
+
+    &:hover {
+        color: $primary-color;
+    }
+}

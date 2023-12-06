@@ -1,0 +1,39 @@
+@import "src/styles/variable";
+
+.download {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.title {
+  display: block;
+  width: 100%;
+  padding: 2px 0;
+  color: $grey70;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: left;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.titleDivider {
+  border-bottom: 1px solid $grey30;
+}
+
+.desc {
+  display: inline-block;
+  width: auto;
+  font-size: 0.7rem;
+  color: $primary-color;
+}
+
+.export-file {
+    &__popover {
+        inset: 157px auto auto 130px !important;
+    }
+}

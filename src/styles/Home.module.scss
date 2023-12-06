@@ -1,0 +1,32 @@
+@import 'variable';
+
+.container {
+    padding: 10px 8px;
+    margin: 0 50px;
+
+    min-height: var(--layout-user-max-height);
+    max-height: var(--layout-user-max-height);
+    height: var(--layout-user-max-height);
+    overflow-y: auto;
+}
+
+.btn-reload-wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--accent-color-2);
+    // margin-right: -18px !important;
+}
+
+.btn-reload {
+    font-size: 1.5rem;
+    color: var(--grey-800);
+
+    &:hover {
+        cursor: pointer;
+        color: var(--primary-color);
+    }
+}

@@ -1,0 +1,33 @@
+.nav-action-icon {}
+
+.setting-general-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    :global {
+        .ant-typography {
+            color: #000;
+            font-size: 16px;
+            font-weight: 400;
+          }
+    }
+
+    &__Item{
+        .langIcon{
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__themeForm{
+        .themeIcon{
+            display: flex;
+            align-items: center;
+        }
+    }
+    .setting--title{
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+      }
+}

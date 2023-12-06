@@ -1,0 +1,32 @@
+// ---------------------------------------------------------- LAYOUT
+
+.layout-container {
+}
+
+.layout-content {
+  &-wrapper {
+    height: calc(100vh - var(--navigation-max-height));
+  }
+
+  &-header {
+    background-color: var(--grey-200);
+    height: var(--layout-user-content-header-max-height);
+  }
+}
+
+.layout-content-main {
+  height: var(--layout-user-max-height);
+  max-height: var(--layout-user-max-height);
+
+  display: flex;
+  
+  margin-top: var(--layout-user-content-main--margin-top); // part of 40px margin for user layout
+
+  &__left__app-sidebar {
+    padding: 0 20px;
+  }
+
+  &__right__content {
+    flex: 1;
+  }
+}

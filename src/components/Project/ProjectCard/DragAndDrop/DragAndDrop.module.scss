@@ -1,0 +1,115 @@
+@import "src/styles/variable";
+
+.iconUpload {}
+
+.custom {
+  :global {
+    .ant-upload-drag {
+      height: auto;
+    }
+
+    .ant-upload-drag {
+      background-color: $grey10 !important;
+    }
+  }
+
+  & div:hover {
+    border-color: $primary-color !important;
+  }
+}
+
+.customCreate {
+  :global {
+    .ant-upload-drag {
+      height: 100%;
+    }
+  }
+}
+
+.info {
+  padding: 0 30px;
+  color: $light-primary-color;
+}
+
+.listContainer {
+  display: flex;
+  font-size: 18px;
+  background-color: #eee;
+  flex-direction: column;
+}
+
+.itemContainer {
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 25px 70px;
+  margin: 15px 50px;
+}
+
+.fileList {
+  width: 100%;
+  // max-width: 400px;
+  padding: 5px 10px;
+  height: 220px;
+
+  overflow-y: scroll;
+  -ms-overflow-y: scroll;
+
+  overflow-x: hidden;
+  -ms-overflow-x: hidden;
+}
+
+.listItem {
+  color: $grey70;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $grey10;
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  grid-auto-flow: column;
+  border: 2px solid #ececec;
+
+  &:hover {
+    background-color: white;
+    border: 2px solid $primary-color;
+  }
+
+  .listItemName {
+    :global {
+      .ant-typography {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .itemFileName {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+.listItemIcon {
+  cursor: pointer;
+  width: 12px !important;
+  height: 12px !important;
+
+  &:hover {
+    color: $primary-color !important;
+  }
+}
+
+.itemOverlay {
+  div {
+    border-color: $primary-color !important;
+    background-color: $primary-color;
+    border-radius: 10px;
+    color: $white;
+
+    -webkit-transition: all 5s linear;
+    -moz-transition: all 5s linear;
+    -o-transition: all 5s linear;
+    transition: all 5s linear;
+  }
+}
