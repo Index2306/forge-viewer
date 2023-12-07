@@ -2,10 +2,8 @@ import React, { ReactNode, useCallback, useEffect, useState } from 'react'
 import { LayoutProps } from '@/models'
 import { useRouter } from 'next/router'
 import { Col, Row } from 'antd'
-import SideBar from '@/components/SideBar'
 import Cookies from 'js-cookie'
 import { HomeContext } from '@/context/HomeContext'
-import ProjectModal from '@/components/Project/ProjectCard/ProjectModal'
 import AppConnection from '../AppConnection'
 import { useAppDispatch } from '@/hooks'
 import Navigation from '../Navigation'
@@ -40,38 +38,6 @@ const UserLayout = ({ children }: LayoutProps) => {
         setIsOpenCreateProjectModal(false)
     }, [])
 
-    const renderNormalPage = (): ReactNode => {
-        return (
-            <>
-                {/* <Row className={cx('layout-content-main')}>
-                <Col xs={3} sm={4} md={2} lg={2} xl={1} xxl={1}>
-                    <SideBar />
-                </Col>
-                <Col xs={21} sm={20} md={22} lg={22} xl={23} xxl={23}>
-                    {children}
-                </Col>
-                </Row> */}
-
-                <div className={cx('layout-content-main')}>
-                    <div className={cx('layout-content-main__left__app-sidebar')}>
-                        <SideBar />
-                    </div>
-                    <div className={cx('layout-content-main__right__content')}
-                    >{children}</div>
-                </div>
-                <ProjectModal
-                    isOpen={isOpenCreateProjectModal}
-                    onClose={handleCloseModal}
-                    projectModal={{ type: 'create', project: undefined }}
-                />
-            </>
-        )
-    }
-
-    const renderToolPage = (): ReactNode => {
-        return <div className={cx('layout-content-main')}>{children}</div>
-    }
-
     const renderUi = () => {
         if (isLogout) return <></>
         return (
@@ -96,7 +62,7 @@ const UserLayout = ({ children }: LayoutProps) => {
                                 setIsTool,
                             }}
                         >
-                            {isTool ? renderToolPage() : renderNormalPage()}
+                            <div className={cx('layout-content-main')}>{children}</div>
                         </HomeContext.Provider>
                     </div>
                 </div>

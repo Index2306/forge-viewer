@@ -1,6 +1,5 @@
 import AppButton from '@/components/Button';
-import ModalApp from '@/components/ModalApp';
-import { Col, ConfigProvider, Image, InputNumber, Row, Select, Slider, Switch, Typography } from 'antd';
+import { Col, ConfigProvider, Image, InputNumber, Modal, Row, Select, Slider, Switch, Typography } from 'antd';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
@@ -98,7 +97,7 @@ export default function SettingNavItemModal({ open, setOpen }: SettingNavItemMod
   };
 
   return (
-    <ModalApp
+    <Modal
       title={t('general_settings')}
       width={520}
       open={open}
@@ -108,17 +107,6 @@ export default function SettingNavItemModal({ open, setOpen }: SettingNavItemMod
       onOk={() => {
         handleOk()
       }}
-      renderFooter={
-        <div style={{ display: 'flex', justifyContent: 'end' }}>
-          <AppButton
-            onClick={() => {
-              handleOk()
-            }}
-          >
-            {t('save')}
-          </AppButton>
-        </div>
-      }
       maskClosable={false}
     >
       <ConfigProvider theme={ANT_THEME}>
@@ -209,7 +197,7 @@ export default function SettingNavItemModal({ open, setOpen }: SettingNavItemMod
           </Row>
         </div>
       </ConfigProvider>
-    </ModalApp>
+    </Modal>
   )
 
 }

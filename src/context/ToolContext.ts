@@ -1,5 +1,4 @@
 import {createContext, ReactNode} from "react";
-import {UserFile} from "@/models";
 
 export const ToolContext = createContext<ToolContextProps>({
     isOpenSideBar: true,
@@ -14,11 +13,11 @@ export interface ToolContextProps {
     toolFile?: ReactNode
     isOpenSideBar?: boolean
     setIsOpenSideBar?: (v: boolean) => void,
-    fileSelected?: UserFile | undefined
-    openFile?: (file: UserFile) => void
+    fileSelected?: any | undefined
+    openFile?: (file: any) => void
     distanceWiring?: number
     setDistanceWiring?: (distance: number) => void
-    onHandleAddNewFile?: (newFile: UserFile) => void
+    onHandleAddNewFile?: (newFile: any) => void
     isToolReady: boolean
     setIsToolReady?: (val: boolean) => void
     progressUnit: number,

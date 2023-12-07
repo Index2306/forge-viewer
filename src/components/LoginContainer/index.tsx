@@ -1,9 +1,8 @@
 import React, {ReactNode} from 'react';
 import styles from './LoginContainer.module.scss';
 import Image from "next/image";
-import SwitchLocale from "@/components/SwitchLocale";
 import classNames from 'classnames/bind'
-import {Col, Row} from "antd";
+import {Col, Row, Switch} from "antd";
 
 const cx = classNames.bind(styles)
 
@@ -15,7 +14,7 @@ const LoginContainer: React.FC<{ children: ReactNode }> = ({children}) => {
                     <Col xs={24} lg={12} className={cx('login-page__column')}>
                         <div className={cx('login-page__content')}>
                             <div className={cx('login-page__content-locale')}>
-                                <SwitchLocale size={35} dark={true}/>
+                                <Switch />
                             </div>
                             <div className={cx('login-page__content-form')}>
                                 {children}
