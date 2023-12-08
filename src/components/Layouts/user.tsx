@@ -18,8 +18,6 @@ const UserLayout = ({ children }: LayoutProps) => {
     const { locale, push } = useRouter()
 
     const [isLogout, setIsLogout] = useState<boolean>(true)
-    const [isTool, setIsTool] = useState<boolean>(false)
-    const [isOpenCreateProjectModal, setIsOpenCreateProjectModal] = useState<boolean>(false)
     const [headElement, setHeadElement] = useState<ReactNode>(<></>)
 
     const dispatch = useAppDispatch()
@@ -33,10 +31,6 @@ const UserLayout = ({ children }: LayoutProps) => {
     }, [locale, push, token, user])
 
     // Helper clear data after Get out of tool page
-
-    const handleCloseModal = useCallback(() => {
-        setIsOpenCreateProjectModal(false)
-    }, [])
 
     const renderUi = () => {
         if (isLogout) return <></>
@@ -56,10 +50,7 @@ const UserLayout = ({ children }: LayoutProps) => {
 
                         <HomeContext.Provider
                             value={{
-                                isOpenCreateProjectModal,
-                                setIsOpenCreateProjectModal,
                                 setHeadElement,
-                                setIsTool,
                             }}
                         >
                             <div className={cx('layout-content-main')}>{children}</div>

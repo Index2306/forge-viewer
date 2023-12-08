@@ -88,7 +88,7 @@ function App({ Component, ...rest }: AppPropsWithLayout) {
                             } /* should use property 'resetCSS=false' to check before remove chakra UI */
                         >
                             <AppContext.Provider value={{ isLoading, setLoading, browser }}>
-                                <div style={{position: 'relative'}}>
+                                <div style={{position: 'relative', width: '100%'}}>
                                 {/* Support for App loading... */}
                                     <AppLoading />
                                     <Component {...pageProps} />

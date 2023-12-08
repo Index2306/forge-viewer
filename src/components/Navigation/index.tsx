@@ -24,14 +24,14 @@ export default function Navigation() {
                 {/* ---------------------------------------------- Speam logo */}
 
                 <div className={cx('navigation-main__logo')}>
-                    <Link href='/' locale={locale}>
+                    {/* <Link href='/' locale={locale}>
                         <Image
                             src='/assets/img/logo_speamplan--white.svg'
                             alt='speam_logo'
                             width={170}
                             height={40}
                         />
-                    </Link>
+                    </Link> */}
                 </div>
 
                 {/* ---------------------------------------------- Menu icon */}
