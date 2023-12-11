@@ -1,0 +1,73 @@
+@import 'src/styles/mixins';
+
+// --------------------------------------------------- ToolContainer/index.tsx styles
+
+.tool-container-wrapper {
+    position: relative;
+    display: none;
+
+    &--is-active {
+        display: block;
+    }
+
+    &__content {
+        height: var(--layout-tool-max-height);
+        max-height: var(--layout-tool-max-height);
+    }
+
+    &--d-flex {
+        height: 100%;
+        display: flex;
+    }
+
+    &__left-sidebar {
+        width: var(--layout-tool-left-sidebar__width);
+        height: 100%;
+        z-index: 200;
+    }
+
+    &__right-sidebar {
+        width: var(--layout-tool-right-sidebar__width);
+        background-color: var(--grey-200);
+        height: 100%;
+        position: relative;
+    }
+
+    &__viewer {
+        width: calc(
+            100vw - var(--layout-tool-left-sidebar__width) - var(--layout-tool-right-sidebar__width)
+        );
+        height: 100%;
+        position: relative;
+    }
+}
+
+// --------------------------------------------------- WarningChangeUnitBanner.tsx styles
+
+.warning-change-unit {
+    width: calc(100vw - 2px - var(--layout-tool-right-sidebar__width));
+    position: fixed;
+    z-index: 5;
+
+    &__alert {
+        width: calc(100% - 2px - var(--layout-tool-left-sidebar__width));
+        right: var(--layout-tool-left-sidebar__width);
+        float: right;
+    }
+}
+
+// --------------------------------------------------- FileStatus.tsx styles
+
+.fileStatus {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.titleAlert {
+    font-size: 1.3rem;
+    font-weight: 700;
+}

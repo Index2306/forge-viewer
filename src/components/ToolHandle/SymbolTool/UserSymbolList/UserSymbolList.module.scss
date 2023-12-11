@@ -1,0 +1,42 @@
+.symbol-subtool-title {
+    margin: 0px;
+}
+
+.symbol-list {
+    &__content {
+        margin: 0 -15px 0 -15px;
+    }
+}
+
+.symbol-item {
+    padding: 8px 15px 8px 15px;
+    max-width: 100%;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__name {
+    }
+
+    &__icon {
+    }
+
+    &__highlight {
+        padding: 8px 15px 8px 15px;
+        border-bottom: 1px solid var(--accent-color-2);
+
+        &:hover {
+            background-color: var(--accent-color-2);
+        }
+    }
+
+    &__all {
+        padding: 15px;
+
+        background-color: var(--subtool-show-all-color);
+        color: var(--secondary-color);
+    }
+}

@@ -11,6 +11,8 @@ import UserLayout from "@/components/Layouts/user";
 
 import PageLoading from "@/components/AppLoading/PageLoading";
 import { getFileById } from '@/store/actions/file.action';
+import ToolContainer from '@/components/Tool/ToolContainer';
+import { addFile } from '@/store/slices/tool/tool.slice';
 
 const ToolPage = () => {
     const {query} = useRouter()
@@ -18,24 +20,20 @@ const ToolPage = () => {
     const {t} = useTranslation();
     const titlePage = `${t('tool')} | ${process.env.NEXT_PUBLIC_APP_NAME}`;
     const dispatch = useAppDispatch()
-    // const {data, isSuccess, isFetching, isError, errorMessage} = useAppSelector(selectGetProject)
-    const [files, setFiles] = useState<any[]>([])
-    const [toolFile, setToolFile] = useState<ReactNode>(<></>)
+
     const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(false)
-    const [fileSelected, setFileSelected] = useState<any | undefined>(undefined)
     const [distanceWiring, setDistanceWiring] = useState<number | undefined>(NaN)
     const [isToolReady, setIsToolReady] = useState<boolean>(false)
+    const [isFetching, setIsFetching] = useState<boolean>(false)
 
     const [progressUnit, setProgressUnit] = useState<number>(0)
     const [errUnit, setErrUnit] = useState<string | null>(null)
     useEffect(() => {
-        dispatch(getFileById(id as string))
-        return () => {
-            setFiles([])
-            setToolFile(<></>)
-            setFileSelected(undefined)
-            setIsOpenSidebar(false)
-        }
+        setIsFetching(true)
+        dispatch(getFileById(id as string)).unwrap().then((res) => {
+            dispatch(addFile(res.result))
+        }).catch(err => console.log(err))
+        .finally(() => setIsFetching(false))
     }, [])
 
     // After the data of current project is gotten from api
@@ -50,10 +48,6 @@ const ToolPage = () => {
             <ToolContext.Provider value={{
                 isOpenSideBar: isOpenSidebar,
                 setIsOpenSideBar: setIsOpenSidebar,
-                toolFile: toolFile,
-                fileSelected: fileSelected,
-                // openFile: onHandleOpenFile,
-                // onHandleAddNewFile: onHandleAddNewFile,
                 distanceWiring: distanceWiring,
                 setDistanceWiring: setDistanceWiring,
                 isToolReady: isToolReady,
@@ -63,10 +57,10 @@ const ToolPage = () => {
                 errUnit: errUnit,
                 setErrUnit: setErrUnit
             }}>
-                {/* <div>
+                <div>
                     {isFetching ? <PageLoading /> : null}
-                    <ToolContainer key={fileSelected?.id} project={data} fileId={fileSelected?.id} isOpen={fileSelected?.projectIndex === 0} />
-                </div> */}
+                    <ToolContainer />
+                </div>
             </ToolContext.Provider>
         </>
     );

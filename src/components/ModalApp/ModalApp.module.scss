@@ -1,0 +1,35 @@
+@import 'src/styles/variable';
+
+.modal-app-title {
+    height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-inline: -6px;
+    cursor: default;
+
+    &__label {
+        color: var(--primary-color);
+        user-select: none;
+        pointer-events: none;
+    }
+
+    &__divider {
+        width: 99.5%;
+        border-bottom: 1px solid var(--grey-400);
+        position: absolute;
+        left: 0;
+        top: 3rem;
+        z-index: 1;
+    }
+
+    &__close-icon {
+        font-size: 28px;
+        cursor: pointer;
+        color: var(--grey-900);
+    }
+}
+
+.modal-app-content {
+}

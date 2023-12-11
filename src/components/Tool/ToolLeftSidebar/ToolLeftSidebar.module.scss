@@ -1,0 +1,129 @@
+// ------------------------------------------------------------- Tool Left sidebar accent color
+
+.tool-left-sideBar {
+  width: 100%;
+  height: 100%;
+  background-color: var(--grey-200);
+  overflow: auto;
+  z-index: 200;
+
+  &__divider {
+    // background-color: #fff;
+    background-color: var(--grey-200);
+    width: 100%;
+    height: 2px;
+  }
+
+}
+
+// ------------------------------------------------------------- Content accent color
+
+.content-accent-color {
+  padding: var(--padding-small);
+  background-color: var(--accent-color-2);
+  text-align: center;
+
+  &__label {
+    color: var(--secondary-color);
+    text-transform: uppercase;
+  }
+}
+
+// ------------------------------------------------------------- Content flat for Button
+
+.content-flat {
+  text-align: center;
+  height: 40px;
+
+  &__btn {
+    width: 100%;
+    padding: var(--padding-small);
+    text-transform: uppercase;
+    height: 100%;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    background-color: var(--primary-color);
+    color: var(--grey-200);
+  }
+
+  &__btn-back {
+    @extend .content-flat__btn;
+
+    background-color: var(--secondary-color-15);
+    color: var(--grey-200);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// ------------------------------------------------------------- Tool list
+
+@mixin set_border_and_background() {
+  background-color: var(--accent-color-2);
+
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px; 
+}
+
+.tool-list-left-sidebar {
+  max-height: 53vh;
+  padding: 10px 0;
+  margin: 10px 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 20px;
+  
+
+  &__group-part-1 {
+  }
+
+  &__group-part-2 {
+   @include set_border_and_background;
+  }
+
+  &__group-part-3 {
+   @include set_border_and_background;
+  }
+
+}
+
+// ------------------------------------------------------------- Tool items
+
+.tool-item-left-sidebar {
+  padding: 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background-color: var(--accent-color-2);
+
+  // cursor: pointer;
+
+  &__icon {
+    width: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--secondary-color-15);
+  }
+
+  &__icon.img--is-active {
+    filter: var(--filter-icons--primary-color);
+  }
+
+  &__icon.is-active {
+    color: var(--primary-color);
+  }
+}
