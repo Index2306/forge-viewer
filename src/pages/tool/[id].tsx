@@ -7,7 +7,7 @@ import Head from "next/head";
 import {useAppDispatch, useAppSelector} from "@/hooks";
 import {errorToast} from "@/helpers/Toast";
 import {ToolContext} from "@/context/ToolContext";
-import UserLayout from "@/components/Layouts/user";
+import ToolLayout from "@/components/Layouts/tool";
 
 import PageLoading from "@/components/AppLoading/PageLoading";
 import { getFileById } from '@/store/actions/file.action';
@@ -68,7 +68,7 @@ const ToolPage = () => {
 
 export default ToolPage;
 
-ToolPage.Layout = UserLayout;
+ToolPage.Layout = ToolLayout;
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {

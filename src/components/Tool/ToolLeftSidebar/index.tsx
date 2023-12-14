@@ -28,14 +28,6 @@ const ToolLeftSidebar: React.FC<ToolLeftSidebarProps> = ({isShowTool}) => {
         <div className={cx('tool-left-sideBar')}>
             {/* -------------------------------------------- Back button */}
 
-            <div className={cx('content-flat')}>
-                <button
-                    data-class='label__page-tool__tool-left-sidebar__main-btn'
-                    className={cx('content-flat__btn-back')} onClick={() => handleClickBack()}>
-                    {t('back', { ns: 'common' })}
-                </button>
-            </div>
-
             <DividerTLS />
 
             {/* -------------------------------------------- Save button */}
