@@ -10,7 +10,7 @@ import {
     DEFAULT_VIEWER_OPTIONS
 } from './default';
 import {loadCustomTool} from "@/ForgeViewer/CustomTool/load";
-import {ToolContext} from "@/context/ToolContext";
+import { ForgeViewerContext } from '@/context/ForgeViewerContext';
 
 type State = {
     scriptsLoaded: boolean;
@@ -68,7 +68,7 @@ export function useHooks({
     const viewerRef = React.useRef<any>(null);
 
     //Context
-    const {setIsToolReady} = useContext(ToolContext)
+    const {modelType} = useContext(ForgeViewerContext)
 
     // viewer object
     let viewer: Autodesk.Viewing.Viewer3D;
@@ -176,7 +176,7 @@ export function useHooks({
     const handleDocumentLoad = (
         viewerDocument: Autodesk.Viewing.Document
     ): void => {
-        const viewable = onDocumentLoadSuccess(viewerDocument);
+        const viewable = onDocumentLoadSuccess(viewerDocument, modelType);
 
         viewer.loadDocumentNode(viewerDocument, viewable, viewableOptions).then((e) => {
             // set viewer after load model success

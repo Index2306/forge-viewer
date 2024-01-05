@@ -6,10 +6,10 @@ export const DEFAULT_INITIALIZER_OPTIONS: object = {
 export const DEFAULT_VIEWER_OPTIONS: object = {};
 export const DEFAULT_VIEWABLE_OPTIONS: object = {};
 export const DEFAULT_DOCUMENT_LOAD_SUCCESS = (
-    viewerDocument: Autodesk.Viewing.Document
+    viewerDocument: Autodesk.Viewing.Document, modelType: string
 ): Autodesk.Viewing.BubbleNode => viewerDocument.getRoot().search({
     'type': 'geometry',
-    'role': '3d'
+    'role': modelType
 })[0].getDefaultGeometry();
 export const DEFAULT_DOCUMENT_LOAD_ERROR = (
     errorCode?: Autodesk.Viewing.ErrorCodes,

@@ -29,11 +29,11 @@ const ToolPage = () => {
     const [progressUnit, setProgressUnit] = useState<number>(0)
     const [errUnit, setErrUnit] = useState<string | null>(null)
     useEffect(() => {
-        setIsFetching(true)
-        dispatch(getFileById(id as string)).unwrap().then((res) => {
-            dispatch(addFile(res.result))
-        }).catch(err => console.log(err))
-        .finally(() => setIsFetching(false))
+        // setIsFetching(true)
+        // dispatch(getFileById(id as string)).unwrap().then((res) => {
+        //     dispatch(addFile(res.result))
+        // }).catch(err => console.log(err))
+        // .finally(() => setIsFetching(false))
     }, [])
 
     // After the data of current project is gotten from api
@@ -55,11 +55,11 @@ const ToolPage = () => {
                 progressUnit: progressUnit,
                 setProgressUnit: setProgressUnit,
                 errUnit: errUnit,
-                setErrUnit: setErrUnit
+                setErrUnit: setErrUnit,
             }}>
                 <div>
                     {isFetching ? <PageLoading /> : null}
-                    <ToolContainer />
+                    <ToolContainer urn={id}/>
                 </div>
             </ToolContext.Provider>
         </>

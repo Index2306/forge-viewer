@@ -202,7 +202,7 @@ const FileViewer: React.FC<FileViewerProps> = ({
         <>
             <CursorCustomer />
             <FileStatus status={currentFile?.status ?? -1} />
-            {resetViewer ? null : urnModel && token && (currentFile?.status ?? -1) === 0 ? <ForgeViewer
+            {resetViewer ? null : urnModel && token ? <ForgeViewer
                 setViewer={onHandleSetViewer}
                 isMinFile={process.env.NEXT_PUBLIC_PRODUCT === 'true'}
                 isLMV={false}

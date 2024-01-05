@@ -21,6 +21,7 @@ import Button from '@/components/Button';
 import { toast } from 'react-toastify';
 import { RcFile } from 'antd/es/upload';
 import { getAllfile, uploadFileToProject } from '@/store/actions/file.action';
+import { getBuckets } from '@/store/actions/forge.action';
 const cx = classNames.bind(styles)
 
 function Home() {
@@ -51,8 +52,6 @@ function Home() {
 
     const dispatch = useAppDispatch()
 
-    // ------------------------------------------------------ Render Element Header
-
     useEffect(() => {
 
         return () => {
@@ -62,8 +61,8 @@ function Home() {
 
     useEffect(() => {
         setIsLoadData(false)
-        dispatch(getAllfile()).unwrap().then((res: any) => {
-            setListFile(res.result.files)
+        dispatch(getBuckets('gnjib7jj2eyot0jfikq5lj2hxaso6y4k-test')).unwrap().then((res: any) => {
+            setListFile(res)
         })
     }, [])
 
@@ -96,14 +95,15 @@ function Home() {
     const columns = useMemo(() => {
         return [
             {
-                title: 'Id',
+                title: 'STT',
                 dataIndex: 'id',
                 key: 'id',
+                render: (text: any, record: any, index: any) => index + 1
             },
             {
                 title: 'Name',
-                dataIndex: 'name',
-                key: 'name',
+                dataIndex: 'text',
+                key: 'text',
             },
             {
                 title: 'Action',

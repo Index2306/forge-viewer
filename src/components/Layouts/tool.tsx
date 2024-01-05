@@ -18,7 +18,8 @@ const ToolLayout = ({children}: LayoutProps) => {
 
     useEffect(() => {
         if (!token || !user) {
-            push('/auth/login', '/auth/login', {locale})
+            // push('/auth/login', '/auth/login', {locale})
+            setIsLogout(false)
         } else {
             setIsLogout(false)
         }

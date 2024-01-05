@@ -6,7 +6,8 @@ export const ToolContext = createContext<ToolContextProps>({
     distanceWiring: 0,
     isToolReady: false,
     progressUnit: 0,
-    errUnit: null
+    errUnit: null,
+    urn: '',
 });
 
 export interface ToolContextProps {
@@ -24,4 +25,5 @@ export interface ToolContextProps {
     setProgressUnit?: (p: number) => void
     errUnit: string | null
     setErrUnit?: (b: string | null) => void
+    urn?: any
 }

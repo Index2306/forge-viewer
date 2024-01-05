@@ -17,10 +17,11 @@ import LoadingByStatus from './LoadingByStatus';
 import styles from "./ToolContainer.module.scss";
 import classNames from 'classnames/bind';
 import ToolLeftSidebar from '../ToolLeftSidebar';
+import { getTokenViewerBucket } from '@/store/actions/forge.action';
 
 const cx = classNames.bind(styles)
 
-const ToolContainer: React.FC<ToolContainerProps> = () => {
+const ToolContainer: React.FC<ToolContainerProps> = ({ urn }) => {
     const { t } = useTranslation(['common', 'config', 'tool'])
 
     const [viewer, setViewer] = useState<Autodesk.Viewing.Viewer3D | undefined>(undefined)
@@ -37,6 +38,7 @@ const ToolContainer: React.FC<ToolContainerProps> = () => {
     const dispatch = useAppDispatch()
     const { currentFile } = useAppSelector(selectTool)
     const [fileIdOpen, setFileIdOpen] = useState<string | undefined>(undefined)
+    const [modelType, setModelType] = useState<string>('3d')
 
     useEffect(() => {
         if (currentFile && currentFile.modelDerivativeUrn !== modelDerivativeUrn) {
@@ -57,11 +59,11 @@ const ToolContainer: React.FC<ToolContainerProps> = () => {
             }
         }
 
-        dispatch(getTokenViewer())
+        dispatch(getTokenViewerBucket())
             .unwrap()
             .then(res => {
                 setIsFetching(false)
-                setToken(res.result)
+                setToken(res.access_token)
             }).catch(errors => {
                 setIsFetching(false)
                 if (errors?.length > 0) {
@@ -95,7 +97,17 @@ const ToolContainer: React.FC<ToolContainerProps> = () => {
 
     return (
         <ForgeViewerContext.Provider
-            value={{ viewer, activeTool, setActiveTool: onHandleSetActiveTool, setIsFetching, setStatusLoading, cursorCustomer, setCursorCustomer }}>
+            value={{
+                viewer,
+                activeTool,
+                setActiveTool: onHandleSetActiveTool,
+                setIsFetching,
+                setStatusLoading,
+                cursorCustomer,
+                setCursorCustomer,
+                modelType,
+                setModelType
+            }}>
 
             {/* --- Connect to Hub SignalR to get file info --- */}
 
@@ -131,23 +143,15 @@ const ToolContainer: React.FC<ToolContainerProps> = () => {
                                 currentFileStatus={currentFile?.status}
                             />
 
-                            {currentFile &&
-                                <>
-                                    {/* When the file is first uploaded and have empty fileData properties in store */}
-
-                                    {/* Show main viewer */}
-
-                                    <FileViewer
-                                        viewer={viewer}
-                                        urn={modelDerivativeUrn}
-                                        token={token}
-                                        onHandleSetViewer={onHandleSetViewer}
-                                        setIsFetching={setIsFetching}
-                                        isFetching={isFetching}
-                                        setStatusLoading={setStatusLoading}
-                                    />
-                                </>
-                            }
+                            <FileViewer
+                                viewer={viewer}
+                                urn={urn}
+                                token={token}
+                                onHandleSetViewer={onHandleSetViewer}
+                                setIsFetching={setIsFetching}
+                                isFetching={isFetching}
+                                setStatusLoading={setStatusLoading}
+                            />
                         </div>
                     </div>
                 </div>
@@ -159,4 +163,5 @@ const ToolContainer: React.FC<ToolContainerProps> = () => {
 export default ToolContainer;
 
 export interface ToolContainerProps {
+    urn: any
 }

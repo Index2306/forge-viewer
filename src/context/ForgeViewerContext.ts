@@ -5,7 +5,7 @@ export const ForgeViewerContext = createContext<ForgeViewerContextProps>(
     {
         setActiveTool: (tool) => {},
         setIsFetching: (value) => {},
-        setStatusLoading: (value) => {}
+        setStatusLoading: (value) => {},
     });
 
 export interface ForgeViewerContextProps {
@@ -16,5 +16,7 @@ export interface ForgeViewerContextProps {
     activeTool?: ToolInterface | any,
     setActiveTool: (tool: string | any) => void
     setIsFetching: (value: any) => void
-    setStatusLoading: (value: number) => void
+    setStatusLoading: (value: number) => void,
+    modelType?: string,
+    setModelType?: (value: string | any) => void,
 }
